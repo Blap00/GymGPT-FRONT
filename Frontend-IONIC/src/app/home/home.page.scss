@@ -20,7 +20,7 @@
 .highlight-text {
   font-size: 36px;
   font-family: 'Viga', sans-serif;
-  color: #FFFF00; /* Color amarillo fosforescente */
+  color: #E6FE58; /* Color amarillo fosforescente */
   text-transform: uppercase; /* Opcional */
   position: relative;
   top: -50px; /* Ajusta este valor para mover el texto hacia arriba */
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: space-around; /* Coloca los botones espaciados dentro del óvalo */
   align-items: center;
-  width: 80%;
+  width: 85%;
   height: 70px;
   background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
   border-radius: 20px; /* Hace que el contenedor sea ovalado */
@@ -76,7 +76,7 @@
   border-radius: 20px; /* Hace los botones ovalados */
   border: none;
   color: black;
-  background-color: #FFFF00;
+  background-color: #E6FE58;
   font-family: "Bai Jamjuree";
   font-size: 16px;
   text-align: center;
