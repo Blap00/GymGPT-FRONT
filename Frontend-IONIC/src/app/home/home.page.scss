@@ -51,44 +51,33 @@
   justify-content: space-around; /* Coloca los botones espaciados dentro del óvalo */
   align-items: center;
   width: 80%;
-  height: 100px;
-  background-color: white;
+  height: 70px;
+  background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
   border-radius: 20px; /* Hace que el contenedor sea ovalado */
   margin: 10px auto 0 auto; /* Reduce el margen superior para acercar el óvalo a los textos */
   padding: 10px;
-  margin-top: -200px;
+  margin-top: -230px;
 }
 
-/* Botón de Iniciar Sesión */
-.button-primary {
-  font-family: 'Viga', sans-serif;
-  font-size: 18px;
-  padding: 10px 20px;
-  background-color: #000; /* Color de fondo del botón */
-  color: white;
+.boton-oval1 {
+  width: 40%;
+  height: 40px;
+  border-radius: 20px; /* Hace los botones ovalados */
+  background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
   border: none;
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer;
+  font-family: "Bai Jamjuree";
+  font-size: 16px;
+  text-align: center;
 }
 
-/* Botón de Registrarse con color fosforescente */
-.button-secondary {
-  font-family: 'Viga', sans-serif;
-  font-size: 18px;
-  padding: 10px 20px;
-  background-color: #faff00; /* Amarillo fosforescente */
-  color: black;
-  border: none;
-  border-radius: 15px; /* Bordes redondeados */
-  cursor: pointer;
-}
-
-.boton-oval {
+.boton-oval2 {
   width: 40%;
   height: 40px;
   border-radius: 20px; /* Hace los botones ovalados */
   border: none;
-  font-family: 'Viga', sans-serif;
+  color: black;
+  background-color: #FFFF00;
+  font-family: "Bai Jamjuree";
   font-size: 16px;
   text-align: center;
 }
