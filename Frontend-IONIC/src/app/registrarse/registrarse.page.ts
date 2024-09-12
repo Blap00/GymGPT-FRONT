@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registrarse',
   templateUrl: './registrarse.page.html',
   styleUrls: ['./registrarse.page.scss'],
 })
-export class RegistrarsePage implements OnInit {
+export class RegistrarsePage{
 
-  constructor() { }
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
+  goToIniciarSesion() {
+    this.navCtrl.navigateForward('/iniciar-sesion')
   }
 
+  goToRegistrarse() {
+    this.navCtrl.navigateForward('/registrarse')
+  }
+  goToHome(){
+    this.navCtrl.navigateForward('/home')
+  }
 }

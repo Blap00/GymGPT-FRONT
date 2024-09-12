@@ -1,4 +1,210 @@
 ion-content {
-    --background: url('../../assets/background.jpg') no-repeat center center;
-    --background-size: cover;
-  }
+  --background: url('../../assets/background.jpg') no-repeat center center;
+  --background-size: cover;
+}
+
+.ini {
+  padding-top: 40px;
+}
+
+.titulo {
+  font-size: 36px;
+  font-family: Viga;
+  margin-right: auto;
+  padding-left: 10px;
+}
+
+.description {
+  font-size: 16px;
+  font-family: "Bai Jamjuree";
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  width: 85%;
+  margin-right: auto;
+  padding-left: 10px;
+  text-align: left;
+  margin-top: -30px;
+}
+
+.home-icon {
+  font-size: 24px;
+  /* Cambia el tamaño del ícono */
+  color: #FFFFFF;
+  /* Cambia el color del ícono */
+  cursor: pointer;
+}
+
+.home-button-container {
+  width: 60px;
+  /* Ancho del círculo */
+  height: 60px;
+  /* Alto del círculo */
+  background-color: rgba(128, 128, 128, 0.5);
+  /* Gris transparente */
+  border-radius: 50%;
+  /* Hace el contenedor redondo */
+  display: flex;
+  /* Flexbox para centrar */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+}
+
+.boton-volver {
+  padding-left: 20px;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.header-text {
+  font-family: 'Viga', sans-serif;
+  font-size: 24px;
+  color: #000;
+}
+
+.login-container {
+  background-color: rgba(128, 128, 128, 0.3);
+  /* Gris translúcido */
+  border-radius: 20px;
+  /* Hace que el contenedor sea ovalado */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  padding: 20px;
+  margin: 20px;
+  width: 85%;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-family: 'Bai Manjuree', sans-serif;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  border-radius: 50px;
+  /* Bordes redondeados para crear un ovalo */
+  padding: 20px;
+  margin: 10px 0;
+  /* Espaciado entre cada campo */
+  width: 80%;
+  background-color: rgba(128, 128, 128, 0.3);
+  /* Gris translúcido */
+}
+
+.input-field {
+
+  border-radius: 20px;
+  /* Bordes redondeados */
+  padding: 12px;
+  font-size: 16px;
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.3);
+  /* Gris translúcido */
+  border: #000;
+  height: 60px;
+}
+
+.login-button {
+  background-color: #ffeb3b;
+  color: #000;
+  border-radius: 20px;
+  padding: 12px;
+  font-family: 'Viga', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sesion-container {
+  display: flex;
+  justify-content: space-around;
+  /* Coloca los botones espaciados dentro del óvalo */
+  align-items: center;
+  height: 55px;
+  background-color: rgba(128, 128, 128, 0.3);
+  /* Gris translúcido */
+  border-radius: 20px;
+  /* Hace que el contenedor sea ovalado */
+  width: 85%;
+  margin: auto;
+}
+
+.boton-oval1 {
+  width: 40%;
+  height: 40px;
+  border-radius: 20px;
+  /* Hace los botones ovalados */
+  background-color: rgba(128, 128, 128, 0.3);
+  /* Gris translúcido */
+  font-family: "Bai Jamjuree";
+  font-size: 16px;
+  text-align: center;
+}
+
+.boton-oval2 {
+  width: 40%;
+  height: 40px;
+  border-radius: 20px;
+  /* Hace los botones ovalados */
+  color: black;
+  background-color: #E6FE58;
+  font-family: "Bai Jamjuree";
+  font-size: 16px;
+  text-align: center;
+}
+.terms-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  position: relative;
+  padding-right: 10px;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+  width: 24px;                /* Tamaño del checkbox */
+  height: 16px;               /* Hacemos el checkbox más ovalado */
+  background-color: transparent;
+  border: 2px solid #888;      /* Borde gris */
+  border-radius: 10px;         /* Bordes redondeados */
+  display: inline-block;
+  vertical-align: middle;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-color: yellow;    /* Color cuando está seleccionado */
+  border-color: yellow;
+}
+
+p {
+  margin-left: 10px;
+  font-size: 14px;
+  font-family: Viga;
+}
+
+a {
+  color: blue;                 /* Color del enlace */
+  text-decoration: underline;
+  cursor: pointer;
+}
