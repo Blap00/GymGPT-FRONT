@@ -6,6 +6,10 @@ ion-content {
 .ini{
   padding-top: 40px;
 }
+input::placeholder {
+  color: white;  /* Cambia el color del placeholder a blanco */
+  opacity: 1;    /* Asegúrate de que el placeholder no sea transparente */
+}
 
 .titulo{
   font-size: 36px;
@@ -50,32 +54,21 @@ ion-content {
 
 .input-group {
   margin-bottom: 20px;
-  display: flex;
   flex-direction: column;
-}
-
-.input-label {
-  font-family: 'Bai Manjuree', sans-serif;
-  font-size: 15px;
-  margin-bottom: 8px;
-  color: #FFFFFF;
-  border-radius: 50px; /* Bordes redondeados para crear un ovalo */
-  padding: 20px;
-  margin: 10px 0; /* Espaciado entre cada campo */
-  width: 80%;
-  background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
 }
 
 .input-field {
   
   border-radius: 20px; /* Bordes redondeados */
-  padding: 12px;
+  padding: 14px;
+  background: none;
   font-size: 16px;
   outline: none;
   background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
   border: #000;
   height: 60px;
 }
+
 
 .login-button {
   background-color: #ffeb3b;
