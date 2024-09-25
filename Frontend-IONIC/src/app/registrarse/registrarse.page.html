@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true">
+  <div class="ini">
+    <p class="titulo">Registrarse</p>
+    <p class="description">Tras Registrarse obtendrás acceso a las guías y sugerencias de la aplicación.</p>
+  </div>
+
+  <div class="boton-volver">
+    <div class="home-button-container">
+      <ion-icon class="home-icon" name="home-outline" (click)="goToHome()"></ion-icon>
+    </div>
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="login-container">
+      <div class="input-group">
+        <ion-input
+          formControlName="username"
+          label="Nombres:"
+          class="input-field"
+          label-placement="floating"
+          fill="none"
+          placeholder="">
+        </ion-input>
+      </div>
+
+      <div class="input-group">
+        <ion-input
+          formControlName="email"
+          label="Correo electrónico:"
+          class="input-field"
+          label-placement="floating"
+          fill="none"
+          placeholder="">
+        </ion-input>
+      </div>
+
+      <div class="input-group">
+        <ion-input
+          type="password"
+          formControlName="pass1"
+          label="Contraseña:"
+          class="input-field"
+          label-placement="floating"
+          fill="none"
+          placeholder="">
+        </ion-input>
+      </div>
+
+      <div class="input-group">
+        <ion-input
+          type="password"
+          formControlName="pass2"
+          label="Confirmar Contraseña:"
+          class="input-field"
+          label-placement="floating"
+          fill="none"
+          placeholder="">
+        </ion-input>
+      </div>
+
+      <div class="terms-container">
+        <label class="custom-checkbox">
+          <input type="checkbox" formControlName="terms">
+          <span class="checkmark"></span>
+        </label>
+        <p>He leído y acepto los <a href="#">términos y condiciones de uso</a></p>
+      </div>
+    </div>
+
+    <div class="sesion-container">
+      <button class="boton-oval2" type="submit">Registrarse</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+</ion-content>
