@@ -1,27 +1,92 @@
-#container {
+/* home.page.scss */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.main-text {
+  font-size: 24px;
+  font-family: 'Viga', sans-serif;
+  position: relative;
+  margin-bottom: 0; /* Asegúrate de que no haya margen adicional */
+  margin-right: auto;
+  padding-left: 20px;
 }
 
-#container p {
+.highlight-text {
+  font-size: 36px;
+  font-family: 'Viga', sans-serif;
+  color: #E6FE58; /* Color amarillo fosforescente */
+  text-transform: uppercase; /* Opcional */
+  position: relative;
+  top: -50px; /* Ajusta este valor para mover el texto hacia arriba */
+  margin-right: auto;
+  padding-left: 20px;
+}
+.descripcion-inicial{
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+  font-family: "Bai Jamjuree";
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000; 
+     margin-top: -90px;
+     margin-bottom: 0;
+     width: 80%;
+     text-align: left;
+     margin-right: auto;
+     left: 20px;
+     padding-left: 20px;
+  ;
+}
+ion-content {
+max-width: 100%;
 }
 
-#container a {
-  text-decoration: none;
+
+
+.sesion-container{
+  display: flex;
+  justify-content: space-around; /* Coloca los botones espaciados dentro del óvalo */
+  align-items: center;
+  width: 85%;
+  height: 70px;
+  background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
+  border-radius: 20px; /* Hace que el contenedor sea ovalado */
+  margin: -110px auto 0 auto; /* Reduce el margen superior para acercar el óvalo a los textos */
+
+
+}
+
+.boton-oval1 {
+  width: 40%;
+  height: 40px;
+  border-radius: 20px; /* Hace los botones ovalados */
+  background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
+  border: none;
+  font-family: "Bai Jamjuree";
+  font-size: 16px;
+  text-align: center;
+}
+
+.boton-oval2 {
+  width: 40%;
+  height: 40px;
+  border-radius: 20px; /* Hace los botones ovalados */
+  border: none;
+  color: black;
+  background-color: #E6FE58;
+  font-family: "Bai Jamjuree";
+  font-size: 16px;
+  text-align: center;
+}
+
+ion-content {
+  --background: url('../../assets/background.jpg') no-repeat center center;
+  --background-size: cover;
 }

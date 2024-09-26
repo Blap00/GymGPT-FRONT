@@ -1,20 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="text-container">
+    <p class="main-text">ENCUENTRA TU EJERCICIO</p>
+    <p class="highlight-text">DO IT NOW</p>
+    <p class="descripcion-inicial">Utiliza tu cámara para detectar las máquinas que deseas usar y se te abrirá un mundo de posibilidades.</p>
   </div>
+<div class ="container">
+  <div class="sesion-container">
+    <button class="boton-oval1" (click)="goToIniciarSesion()">Iniciar Sesion</button>
+    <button class="boton-oval2" (click)="goToRegistrarse()">Registrarse</button>
+  </div>
+</div>
+  
 </ion-content>
