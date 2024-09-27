@@ -36,22 +36,21 @@ export class IniciarSesionPage {
       this.errorMessage = 'Por favor, complete todos los campos correctamente.';
       return;
     }
-
+  
     const formData = this.loginForm.value;
     const body = {
       email: formData.email,
       password: formData.password,
     };
-
+  
     this.authService.loginUser(body).subscribe(
       (response) => {
-        console.log('Usuario autenticado exitosamente', response);
-        // Redirigir al home o dashboard después del login
+        // console.log('Usuario autenticado exitosamente', response);
         this.navCtrl.navigateForward('/home');
       },
       (error) => {
         console.error('Error al iniciar sesión', error);
-        this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
+        this.errorMessage = error.error.message || 'Credenciales incorrectas. Inténtalo de nuevo.';
       }
     );
   }
