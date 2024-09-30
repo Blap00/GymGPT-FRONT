@@ -46,7 +46,7 @@ export class IniciarSesionPage {
     this.authService.loginUser(body).subscribe(
       (response) => {
         // console.log('Usuario autenticado exitosamente', response);
-        this.navCtrl.navigateForward('/home');
+        this.goToHome();
       },
       (error) => {
         console.error('Error al iniciar sesión', error);

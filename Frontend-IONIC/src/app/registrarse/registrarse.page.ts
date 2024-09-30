@@ -70,7 +70,7 @@ export class RegistrarsePage{
       (response) => {
         console.log('Usuario registrado exitosamente', response);
         // Redirigir al login o dashboard después del registro
-        this.navCtrl.navigateForward('/login');
+        this.goToIniciarSesion();
       },
       (error) => {
         console.error('Error al registrar el usuario', error);
