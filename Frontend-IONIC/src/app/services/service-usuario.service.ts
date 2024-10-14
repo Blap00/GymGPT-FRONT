@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceUsuarioService {
-  private apiUrl = 'http://localhost:8000/api/v-1/'; // Cambia esta URL según tu backend
+  private apiUrl = 'https://fabianpalma000.pythonanywhere.com/api/v-1/'; // Cambia esta URL según tu backend
 
   constructor(private http: HttpClient) { }
 
