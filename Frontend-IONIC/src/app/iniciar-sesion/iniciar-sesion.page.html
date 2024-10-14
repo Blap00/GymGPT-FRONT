@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div class="ini">
+    <p class="titulo">Iniciar Sesión</p>
+    <p class="description">Inicia sesión para acceder a tu cuenta.</p>
+  </div>
+  <div class="boton-volver">
+    <div class="home-button-container">
+      <ion-icon class="home-icon" name="home-outline" (click)="goToHome()"></ion-icon>
+    </div>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="login-container">
+      <div class="input-group">
+        <ion-input
+          formControlName="email"
+          label="Correo electrónico:"
+          class="input-field"
+          label-placement="floating"
+          fill="none"
+          placeholder="">
+        </ion-input>
+      </div>
+
+      <div class="input-group">
+        <ion-input
+          type="password"
+          formControlName="password"
+          label="Contraseña:"
+          class="input-field"
+          label-placement="floating"
+          fill="none"
+          placeholder="">
+        </ion-input>
+      </div>
+    </div>
+
+    <div class="sesion-container">
+      <button class="boton-oval1" type="submit">Iniciar Sesion</button>
+      <button class="boton-oval2" (click)="goToRegistrarse()">Registrarse</button>
+    </div>
+  </form>
+
+  
+</ion-content>
