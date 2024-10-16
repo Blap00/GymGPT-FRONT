@@ -18,30 +18,13 @@
   </div>
 </ion-content>
 
-<!-- Footer debe estar fuera de ion-content -->
 <ion-footer>
   <ion-toolbar>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="camera">
-          <ion-icon name="camera-outline"></ion-icon>
-          <ion-label>Cámara</ion-label>
-        </ion-tab-button>
-        <ion-tab-button tab="search">
-          <ion-icon name="search-outline"></ion-icon>
-          <ion-label>Buscar</ion-label>
-        </ion-tab-button>
-        <ion-tab-button tab="home">
-          <ion-icon name="home-outline"></ion-icon>
-          <ion-label>Inicio</ion-label>
-        </ion-tab-button>
-        <ion-tab-button tab="suggestions">
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-label>Sugerencias</ion-label>
-        </ion-tab-button>
-        <ion-tab-button tab="profile">
-          <ion-icon name="person-outline"></ion-icon>
-          <ion-label>Perfil</ion-label>
+        <ion-tab-button *ngFor="let c of componente" [routerLink]="c.redirecTo">
+          <ion-icon [name]="c.icon"></ion-icon>
+          <ion-label>{{ c.name }}</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>

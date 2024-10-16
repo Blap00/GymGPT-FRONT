@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { MenuController, NavController } from '@ionic/angular';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -11,9 +12,10 @@ export class InicioPage implements OnInit {
 
   constructor(private userService: ServiceUsuarioService,
     private menuController: MenuController,
-    private navController:NavController
+    private navController:NavController,
+    private appComponent:AppComponent
   ) { }
-
+  componente=this.appComponent.componentes;
   ngOnInit() {
     const userId = localStorage.getItem('userId'); // Recupera la ID del usuario
     if (userId) {

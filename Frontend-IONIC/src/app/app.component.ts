@@ -59,22 +59,22 @@ export class AppComponent {
     },
 
     {
-      icon: 'clipboard-outline',
+      icon: 'camera-outline',
       name:  'Camara',
       redirecTo: '/camaraa'
     },
     {
-      icon:'calendar-outline',
+      icon:'search-outline',
       name: 'Buscar',
       redirecTo: '/buscar'
     },
     {
-      icon: 'calendar-number-outline',
+      icon: 'star-outline',
       name: 'Sugerencias',
       redirecTo: '/sugerencias'
     },
     {
-      icon: 'calendar-number-outline',
+      icon: 'person-outline',
       name: 'Perfil',
       redirecTo: '/perfil'
     },
@@ -88,3 +88,4 @@ export class AppComponent {
     },
   ]
 }
+
