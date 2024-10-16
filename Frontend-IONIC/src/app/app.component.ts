@@ -76,7 +76,7 @@ export class AppComponent {
     {
       icon: 'person-outline',
       name: 'Perfil',
-      redirecTo: '/perfil'
+      redirecTo: '/user'
     },
 
   ]

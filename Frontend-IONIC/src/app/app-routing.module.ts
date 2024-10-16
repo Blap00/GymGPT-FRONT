@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'sugerencias',
     loadChildren: () => import('./sugerencias/sugerencias.module').then( m => m.SugerenciasPageModule)
   },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+  },
 
 
 ];

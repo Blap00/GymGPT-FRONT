@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { MenuController, NavController } from '@ionic/angular';
 import { AppComponent } from '../app.component';
+
 @Component({
-  selector: 'app-sugerencias',
-  templateUrl: './sugerencias.page.html',
-  styleUrls: ['./sugerencias.page.scss'],
+  selector: 'app-user',
+  templateUrl: './user.page.html',
+  styleUrls: ['./user.page.scss'],
 })
-export class SugerenciasPage implements OnInit {
+export class UserPage implements OnInit {
   user: any;
 
   constructor(private userService: ServiceUsuarioService,
@@ -38,4 +39,3 @@ export class SugerenciasPage implements OnInit {
   }
 
 }
-
