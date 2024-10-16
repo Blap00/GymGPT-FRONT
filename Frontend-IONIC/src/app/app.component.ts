@@ -61,7 +61,7 @@ export class AppComponent {
     {
       icon: 'camera-outline',
       name:  'Camara',
-      redirecTo: '/camaraa'
+      redirecTo: '/camara'
     },
     {
       icon:'search-outline',
