@@ -1,25 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="dark" *ngIf="user">{{user.user.first_name}} {{user.user.last_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
-<!--GENERAR MENU HAMBURGUESA CON EL ICONO DE USUARIO-->
 
-<!--Fix thee style on block rule-->
-<ion-content [fullscreen]="true" style="background-color: #141414;">
-  <div class="" id="dia-ejercicio">
-
-  </div>
-  <div class="" id="guia-entrenamiento">
-    <div class="" id="image-entrenamientoGuide">
-
-    </div>
-    <div class="" id="siguiente-ejercicio">
-
-    </div>
-  </div>
-  <div class="" id="navMenuFooter">
-
+<ion-content class="ion-padding" color="dark">
+  <!-- Aquí va el contenido principal de la página -->
+  <div>
+    <h2>Contenido de la página</h2>
+    <p>Añade tu contenido aquí...</p>
+    <br><br><br><br> <!-- Esto es solo un ejemplo para llenar espacio -->
   </div>
 </ion-content>
 
+<!-- Footer debe estar fuera de ion-content -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="camera">
+          <ion-icon name="camera-outline"></ion-icon>
+          <ion-label>Cámara</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="search">
+          <ion-icon name="search-outline"></ion-icon>
+          <ion-label>Buscar</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="home">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Inicio</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="suggestions">
+          <ion-icon name="star-outline"></ion-icon>
+          <ion-label>Sugerencias</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="profile">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

@@ -20,4 +20,7 @@ export class ServiceUsuarioService {
   loginUser(body: any): Observable<any> {
     return this.http.post(`${this.apiUrl}login/`, body);
   }
+  getUser(id: number): Observable<any>{
+    return this.http.get(`${this.apiUrl}getuser/${id}`);
+  }
 }
