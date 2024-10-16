@@ -30,23 +30,26 @@ export class IniciarSesionPage {
   goToHome() {
     this.navCtrl.navigateForward('/home');
   }
+  goToInicio(){
+    this.navCtrl.navigateForward('/inicio');
+  }
 
   login() {
     if (this.loginForm.invalid) {
       this.errorMessage = 'Por favor, complete todos los campos correctamente.';
       return;
     }
-  
+
     const formData = this.loginForm.value;
     const body = {
       email: formData.email,
       password: formData.password,
     };
-  
+
     this.authService.loginUser(body).subscribe(
       (response) => {
         // console.log('Usuario autenticado exitosamente', response);
-        this.goToHome();
+        this.goToInicio();
       },
       (error) => {
         console.error('Error al iniciar sesión', error);

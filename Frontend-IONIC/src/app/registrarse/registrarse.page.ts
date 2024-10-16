@@ -60,8 +60,14 @@ export class RegistrarsePage{
       return;
     }
     const formData = this.registerForm.value;
+    const fullName = formData.username.split(" ");
+
+    // Asignar primer y segundo nombre (o apellido)
+    formData.first_name = fullName[0];  // Primer nombre
+    formData.last_name = fullName.length > 1 ? fullName.slice(1).join(" ") : "";  // Si hay más de un nombre, el resto se considera apellido
     const body = {
-      username: formData.username,
+      first_name: formData.first_name,
+      last_name: formData.last_name,
       email: formData.email,
       password: formData.pass1,
       password2: formData.pass2,
