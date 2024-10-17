@@ -49,8 +49,7 @@ export class IniciarSesionPage {
     this.authService.loginUser(body).subscribe(
       (response) => {
         localStorage.removeItem('userId'); // Limpia el localStorage
-        // console.log('Usuario autenticado exitosamente', response);
-        const userId = response.user; // Ajusta según tu respuesta de la API
+        const userId = response.user   ; // Ajusta según tu respuesta de la API
         localStorage.setItem('userId', userId); // Guarda la ID en localStorage
         this.goToInicio();
       },

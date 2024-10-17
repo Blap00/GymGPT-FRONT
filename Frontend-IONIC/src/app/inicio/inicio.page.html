@@ -2,7 +2,9 @@
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()">
-        <ion-icon name="person-circle-outline"></ion-icon>
+        <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
+        <!-- <img *ngIf="user.user.image" [src]="user.user.image" alt="Usuario" style="width: 40px; height: 40px; border-radius: 50%;"> -->
+        <ion-icon *ngIf="!statusImage" name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title color="dark" *ngIf="user">{{user.user.first_name}} {{user.user.last_name}}</ion-title>

@@ -12,16 +12,31 @@ export class InicioPage implements OnInit {
 
   constructor(private userService: ServiceUsuarioService,
     private menuController: MenuController,
-    private navController:NavController,
-    private appComponent:AppComponent
+    private navController: NavController,
+    private appComponent: AppComponent
   ) { }
-  componente=this.appComponent.componentes;
+  componente = this.appComponent.componentes;
+  media_url = ''
+  statusImage:boolean = false
+  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
   ngOnInit() {
     const userId = localStorage.getItem('userId'); // Recupera la ID del usuario
     if (userId) {
       this.userService.getUser(parseInt(userId)).subscribe(
         data => {
           this.user = data;
+          this.media_url = this.user.user.image
+          // IT GETS UNDEFINED
+          console.log(this.media_url)
+          if(this.user.user.image!=''){
+            this.user.user.image = `${this.baseUrl}${this.media_url}`;
+            this.statusImage=true
+            console.log(this.user.user.image)
+          }else{
+            console.log("La imagen no se encontro!")
+            this.statusImage=false
+            this.user.user.image = `${this.baseUrl}${this.media_url}`
+          }
           console.log('Datos del usuario:', this.user);
         },
         error => {
@@ -32,9 +47,9 @@ export class InicioPage implements OnInit {
       console.error('No hay un usuario conectado');
     }
   }
-  mostrarMenu(){
+  mostrarMenu() {
     this.menuController.open('first');
-    this.menuController.enable(true,'first');
+    this.menuController.enable(true, 'first');
   }
 
 }
