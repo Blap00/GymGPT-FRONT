@@ -1,9 +1,12 @@
 <ion-app>
   <ion-menu contentId="main" menuId="first" side="start">
     <ion-header>
-      <ion-toolbar>
-        <ion-title>Menú</ion-title>
-      </ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button>
+          <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 35px; height: 35px; border-radius: 50%;">
+          <ion-icon *ngIf="!statusImage" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-header>
 
     <ion-content>

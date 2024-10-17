@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ServiceUsuarioService {
   // private apiUrl = 'https://fabianpalma000.pythonanywhere.com/api/v-1/'; // Cambia esta URL según tu backend
-
-  private apiUrl = 'http://localhost:8000/api/v-1/'; // Cambia esta URL según tu backend
+  private baseUrl = 'http://localhost:8000/api/'
+  private apiUrl = this.baseUrl+'v-1/'; // Cambia esta URL según tu backend
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +23,24 @@ export class ServiceUsuarioService {
   getUser(id: number): Observable<any>{
     return this.http.get(`${this.apiUrl}getuser/${id}`);
   }
+  getToken(body: any):Observable<any>{
+    console.log("BODY:"+body )
+    return this.http.post(`${this.baseUrl}token/`, body);
+  }
+
+  // Actualizar perfil de usuario
+  // Actualizar perfil de usuario
+updateUser(userData: any): Observable<any> {
+  const token = localStorage.getItem('token');  // Asegúrate de que el token se almacene correctamente
+  if (!token) {
+    console.error('Token no encontrado');
+  }
+  return this.http.put(`${this.apiUrl}edit-profile/`, userData, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+}
 
 }

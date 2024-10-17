@@ -3,7 +3,8 @@
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()">
         <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
-        <!-- <img *ngIf="user.user.image" [src]="user.user.image" alt="Usuario" style="width: 40px; height: 40px; border-radius: 50%;"> -->
+        <!-- <img *ngIf="user.user.image" [src]="user.user.image" alt="Usuario" style="width: 40px; height: 40px; border-radius: 50%;">
+         It doenst work properly, Why?-->
         <ion-icon *ngIf="!statusImage" name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
