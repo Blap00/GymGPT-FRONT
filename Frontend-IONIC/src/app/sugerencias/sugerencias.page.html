@@ -1,20 +1,51 @@
-<ion-header  [translucent]="true">
+<ion-header [translucent]="true">
   <ion-toolbar style="background-color: black;">
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()">
-        <ion-icon style="color:white" name="person-circle-outline"></ion-icon>
+        <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" class="user-image">
+        <ion-icon *ngIf="!statusImage" style="color:white" name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title *ngIf="user" >{{user.user.first_name}} {{user.user.last_name}}</ion-title>
+    <ion-title *ngIf="user">{{ user.user.first_name }} {{ user.user.last_name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="sugerencias-content">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">sugerencias</ion-title>
+      <ion-title size="large">Sugerencias</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="form-container">
+    <h2>Tienes una sugerencia? <br> Escríbela abajo</h2>
+
+    <form [formGroup]="sugerenciaForm" (ngSubmit)="enviarSugerencia()">
+      <ion-item class="input-field">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="first_name" placeholder="Nombre"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-field">
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="last_name" placeholder="Apellido"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-field">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-field">
+        <ion-label position="floating">Sugerencia</ion-label>
+        <ion-textarea formControlName="feedback" placeholder="Escribe tu sugerencia"></ion-textarea>
+      </ion-item>
+
+      <div class="btn-container">
+        <ion-button expand="block" type="submit">Enviar</ion-button>
+      </div>
+    </form>
+  </div>
 </ion-content>
 
 <ion-footer>

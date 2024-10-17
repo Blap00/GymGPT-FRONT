@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  // Importa ReactiveFormsModule
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +13,8 @@ import { SugerenciasPage } from './sugerencias.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SugerenciasPageRoutingModule
+    SugerenciasPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [SugerenciasPage]
 })

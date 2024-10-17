@@ -24,23 +24,33 @@ export class ServiceUsuarioService {
     return this.http.get(`${this.apiUrl}getuser/${id}`);
   }
   getToken(body: any):Observable<any>{
-    console.log("BODY:"+body )
     return this.http.post(`${this.baseUrl}token/`, body);
   }
-
-  // Actualizar perfil de usuario
-  // Actualizar perfil de usuario
-updateUser(userData: any): Observable<any> {
-  const token = localStorage.getItem('token');  // Asegúrate de que el token se almacene correctamente
-  if (!token) {
-    console.error('Token no encontrado');
-  }
-  return this.http.put(`${this.apiUrl}edit-profile/`, userData, {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+  postFeedback(body:any):Observable<any>{
+    const token = localStorage.getItem('token');  // Asegúrate de que el token se almacene correctamente
+    if (!token) {
+      console.error('Token no encontrado');
     }
-  });
-}
+    return this.http.post(`${this.apiUrl}feedback/create/`, body,{
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  }
+
+    // Actualizar perfil de usuario
+  updateUser(userData: any): Observable<any> {
+    const token = localStorage.getItem('token');  // Asegúrate de que el token se almacene correctamente
+    if (!token) {
+      console.error('Token no encontrado');
+    }
+    return this.http.put(`${this.apiUrl}edit-profile/`, userData, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  }
 
 }
