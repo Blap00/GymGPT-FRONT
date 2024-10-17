@@ -11,9 +11,6 @@ import { AppComponent } from '../app.component';
 })
 export class UserPage implements OnInit {
   user: any;
-  editForm: FormGroup;
-  errorMessage = '';
-  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
 
   constructor(
     private userService: ServiceUsuarioService,
@@ -23,13 +20,6 @@ export class UserPage implements OnInit {
     private appComponent: AppComponent
 
   ) {
-    this.editForm = this.formBuilder.group({
-      nombreCompleto: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      edad: ['', [Validators.required]],
-      altura: ['', [Validators.required]],
-      peso: ['', [Validators.required]]
-    });
   }
   componente = this.appComponent.componentes;
   ngOnInit() {
@@ -38,7 +28,6 @@ export class UserPage implements OnInit {
       this.userService.getUser(parseInt(userId)).subscribe(
         data => {
           this.user = data;
-          this.populateForm();
           console.log('Datos del usuario:', this.user);
         },
         error => {
@@ -48,53 +37,6 @@ export class UserPage implements OnInit {
     } else {
       console.error('No hay un usuario conectado');
     }
-  }
-
-  populateForm() {
-    if (this.user) {
-      const fullName = `${this.user.user.first_name} ${this.user.user.last_name}`;
-
-      this.editForm.patchValue({
-        nombreCompleto: fullName,
-        edad: this.user.user.age,
-        altura: this.user.user.height,
-        peso: this.user.user.weight
-      });
-    }
-  }
-
-  updateUser() {
-    if (this.editForm.invalid) {
-      this.errorMessage = 'Por favor, complete todos los campos correctamente.';
-      return;
-    }
-
-    const formData = this.editForm.value;
-    const nombres = formData.nombreCompleto.trim().split(' ');
-
-    const firstName = nombres[0];  // El primer nombre
-    const lastName = nombres.length > 1 ? nombres.slice(1).join(' ') : '';  // Los apellidos (si existen)
-
-    const body = {
-      first_name: firstName,
-      last_name: lastName,
-      password: formData.password,
-      age: formData.edad,
-      height: formData.altura,
-      weight: formData.peso
-    };
-
-
-    this.userService.updateUser(body).subscribe(
-      (response) => {
-        console.log('Perfil actualizado exitosamente', response);
-        // this.navController.navigateForward('/perfil');
-      },
-      (error) => {
-        console.error('Error al actualizar el perfil', error);
-        this.errorMessage = 'Error al actualizar el perfil';
-      }
-    );
   }
   mostrarMenu() {
     this.menuController.open('first');

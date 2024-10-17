@@ -11,67 +11,10 @@
 
 <ion-content [fullscreen]="true">
   <div class="ini">
-    <p class="titulo">Editar usuario</p>
+    <p class="titulo">{{user.user.first_name}} {{user.user.last_name}}</p>
   </div>
 
-  <form [formGroup]="editForm" (ngSubmit)="updateUser()">
-    <div class="login-container">
-      <div class="input-group">
-        <ion-input
-          formControlName="nombreCompleto"
-          label="Nombre completo"
-          class="input-field"
-          label-placement="floating"
-          fill="outline"
-          placeholder="Ingrese su nombre completo"
-        ></ion-input>
 
-        <ion-input
-          formControlName="password"
-          type="password"
-          label="Contraseña"
-          class="input-field"
-          label-placement="floating"
-          fill="outline"
-          placeholder="Ingrese nueva contraseña"
-        ></ion-input>
-
-        <ion-input
-          formControlName="edad"
-          type="number"
-          label="Edad"
-          class="input-field"
-          label-placement="floating"
-          fill="outline"
-          placeholder="Ingrese su edad"
-        ></ion-input>
-
-        <ion-input
-          formControlName="altura"
-          type="number"
-          label="Altura"
-          class="input-field"
-          label-placement="floating"
-          fill="outline"
-          placeholder="Ingrese su altura en cm"
-        ></ion-input>
-
-        <ion-input
-          formControlName="peso"
-          type="number"
-          label="Peso"
-          class="input-field"
-          label-placement="floating"
-          fill="outline"
-          placeholder="Ingrese su peso en kg"
-        ></ion-input>
-      </div>
-    </div>
-
-    <div class="sesion-container">
-      <button class="boton-oval1" type="submit">Actualizar Perfil</button>
-    </div>
-  </form>
 </ion-content>
 
 
