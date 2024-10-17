@@ -22,12 +22,25 @@ export class UserPage implements OnInit {
   ) {
   }
   componente = this.appComponent.componentes;
+  media_url = ''
+  statusImage:boolean = false
+  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
+
   ngOnInit() {
     const userId = localStorage.getItem('userId');
     if (userId) {
       this.userService.getUser(parseInt(userId)).subscribe(
         data => {
           this.user = data;
+          this.media_url = this.user.user.image
+          if(this.user.user.image!=''){
+            this.user.user.image = `${this.baseUrl}${this.media_url}`;
+            this.statusImage=true
+          }else{
+            console.log("La imagen no se encontro!")
+            this.statusImage=false
+            this.user.user.image = `${this.baseUrl}${this.media_url}`
+          }
           console.log('Datos del usuario:', this.user);
         },
         error => {
@@ -37,6 +50,9 @@ export class UserPage implements OnInit {
     } else {
       console.error('No hay un usuario conectado');
     }
+  }
+  abrirPerfil(){
+    this.navController.navigateForward('/edit-user')
   }
   mostrarMenu() {
     this.menuController.open('first');

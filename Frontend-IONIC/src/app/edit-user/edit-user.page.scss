@@ -1,0 +1,62 @@
+.edit-user-content {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.user-image-container {
+  margin: 20px auto;
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.form-container {
+  background-color: #333;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  --background: #555;
+  --color: white;
+}
+
+.update-button {
+  background-color: #f4d03f;
+  color: black;
+  border-radius: 20px;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.password-link {
+  display: block;
+  margin-top: 10px;
+  color: #00aaff;
+  font-size: 14px;
+}
+
+ion-tab-bar {
+  background-color: black;
+}
+
+ion-tab-button {
+  --color-selected: #f4d03f;
+  --color: white;
+}

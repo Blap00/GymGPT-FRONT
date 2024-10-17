@@ -1,21 +1,22 @@
-<ion-header  [translucent]="true">
+<ion-header [translucent]="true">
   <ion-toolbar style="background-color: black;">
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()">
-        <ion-icon style="color:white" name="person-circle-outline"></ion-icon>
+        <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
+        <ion-icon *ngIf="!statusImage" style="color:white" name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title *ngIf="user" >Editar usuario</ion-title>
+    <ion-title *ngIf="user">Editar usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="ini">
-    <p class="titulo">Editar usuario</p>
+<ion-content [fullscreen]="true" class="edit-user-content">
+  <div class="user-image-container">
+    <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" class="user-image" />
   </div>
 
-  <form [formGroup]="editForm" (ngSubmit)="updateUser()">
-    <div class="login-container">
+  <div class="form-container">
+    <form [formGroup]="editForm" (ngSubmit)="updateUser()">
       <div class="input-group">
         <ion-input
           formControlName="nombreCompleto"
@@ -66,14 +67,13 @@
           placeholder="Ingrese su peso en kg"
         ></ion-input>
       </div>
-    </div>
 
-    <div class="sesion-container">
-      <button class="boton-oval1" type="submit">Actualizar Perfil</button>
-    </div>
-  </form>
+      <div class="session-container">
+        <button class="update-button" type="submit">Actualizar Perfil</button>
+      </div>
+    </form>
+  </div>
 </ion-content>
-
 
 <ion-footer>
   <ion-toolbar>

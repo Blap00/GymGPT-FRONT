@@ -26,12 +26,9 @@ export class InicioPage implements OnInit {
         data => {
           this.user = data;
           this.media_url = this.user.user.image
-          // IT GETS UNDEFINED
-          console.log(this.media_url)
           if(this.user.user.image!=''){
             this.user.user.image = `${this.baseUrl}${this.media_url}`;
             this.statusImage=true
-            console.log(this.user.user.image)
           }else{
             console.log("La imagen no se encontro!")
             this.statusImage=false

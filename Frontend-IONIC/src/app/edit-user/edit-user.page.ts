@@ -32,12 +32,23 @@ export class EditUserPage implements OnInit {
     });
   }
   componente = this.appComponent.componentes;
+  media_url = ''
+  statusImage:boolean = false
   ngOnInit() {
     const userId = localStorage.getItem('userId');
     if (userId) {
       this.userService.getUser(parseInt(userId)).subscribe(
         data => {
           this.user = data;
+          this.media_url = this.user.user.image
+          if(this.user.user.image!=''){
+            this.user.user.image = `${this.baseUrl}${this.media_url}`;
+            this.statusImage=true
+          }else{
+            console.log("La imagen no se encontro!")
+            this.statusImage=false
+            this.user.user.image = `${this.baseUrl}${this.media_url}`
+          }
           this.populateForm();
           console.log('Datos del usuario:', this.user);
         },
