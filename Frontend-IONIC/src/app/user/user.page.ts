@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuController, NavController } from '@ionic/angular';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-user',
@@ -18,7 +19,9 @@ export class UserPage implements OnInit {
     private userService: ServiceUsuarioService,
     private formBuilder: FormBuilder,
     private menuController: MenuController,
-    private navController: NavController
+    private navController: NavController,
+    private appComponent: AppComponent
+
   ) {
     this.editForm = this.formBuilder.group({
       nombreCompleto: ['', [Validators.required]],
@@ -28,7 +31,7 @@ export class UserPage implements OnInit {
       peso: ['', [Validators.required]]
     });
   }
-
+  componente = this.appComponent.componentes;
   ngOnInit() {
     const userId = localStorage.getItem('userId');
     if (userId) {
