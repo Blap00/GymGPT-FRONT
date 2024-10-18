@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <div class="profile-container">
+        <ion-avatar>
+          <img class="fotoperfil" src="../../assets/ryan.jpg" alt="Profile Picture">
+        </ion-avatar>
+        <div class="mensajeBienvenida">
+          ¡Bienvenido Ryan!
+        </div>
+        <div class="mensajeBienvenida2">
+          ¿Cual es la rutina del día de hoy?
+        </div>
+      </div>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button *ngFor="let c of componente" [routerLink]="c.redirecTo">
+          <ion-icon [name]="c.icon"></ion-icon>
+          <ion-label>{{ c.name }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

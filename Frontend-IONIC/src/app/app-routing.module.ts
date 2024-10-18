@@ -45,6 +45,10 @@ const routes: Routes = [
     path: 'buscar',
     loadChildren: () => import('./buscar/buscar.module').then( m => m.BuscarPageModule)
   },
+  {
+    path: 'pagina-principal',
+    loadChildren: () => import('./pagina-principal/pagina-principal.module').then( m => m.PaginaPrincipalPageModule)
+  },
 
 
 ];

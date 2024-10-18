@@ -26,6 +26,9 @@ export class IniciarSesionPage {
   goToRegistrarse() {
     this.navCtrl.navigateForward('/registrarse');
   }
+  goToPagMain(){
+    this.navCtrl.navigateForward('/pagina-principal');
+  }
 
   goToHome() {
     this.navCtrl.navigateForward('/home');
