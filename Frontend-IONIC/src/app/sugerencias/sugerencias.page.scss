@@ -1,0 +1,56 @@
+.sugerencias-content {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px;
+}
+
+.user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.form-container {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-field {
+  --background: #444;
+  --placeholder-color: #aaa;
+  --color: white;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+ion-button {
+  // background-color: #00aaff;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+ion-tab-bar {
+  background-color: black;
+}
+
+ion-tab-button {
+  --color-selected: #f4d03f;
+  --color: white;
+}

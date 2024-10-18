@@ -30,23 +30,47 @@ export class IniciarSesionPage {
   goToHome() {
     this.navCtrl.navigateForward('/home');
   }
-
+  goToInicio(){
+    this.navCtrl.navigateForward('/inicio');
+  }
+  username:string ='';
   login() {
     if (this.loginForm.invalid) {
       this.errorMessage = 'Por favor, complete todos los campos correctamente.';
       return;
     }
-  
+
     const formData = this.loginForm.value;
     const body = {
       email: formData.email,
       password: formData.password,
     };
-  
+    this.username = body.email.split('@')[0]
     this.authService.loginUser(body).subscribe(
       (response) => {
-        // console.log('Usuario autenticado exitosamente', response);
-        this.goToHome();
+        localStorage.removeItem('userId'); // Limpia el localStorage
+        const userId = response.user   ; // Ajusta según tu respuesta de la API
+        localStorage.setItem('userId', userId); // Guarda la ID en localStorage
+        localStorage.removeItem('token'); // Limpia el localStorage
+
+
+        const tokenRequestBody = {
+            username: this.username,
+            password: body.password
+        };
+
+        this.authService.getToken(tokenRequestBody).subscribe(
+          (tokenResponse: any) => {
+            const token = tokenResponse.access; // Ajusta según tu respuesta
+            localStorage.setItem('token', token);
+            this.goToInicio();
+          },
+          (error) => {
+            console.error('Error al obtener el token', error);
+            this.errorMessage = 'Error al obtener el token.';
+          }
+        );
+        this.goToInicio();
       },
       (error) => {
         console.error('Error al iniciar sesión', error);

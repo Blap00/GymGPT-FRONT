@@ -1,0 +1,65 @@
+.workout-content {
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.workout-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.workout-subtitle {
+  font-size: 20px;
+  color: #f4d03f; /* Color similar al mockup */
+}
+
+.workout-details {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.keep-watching-button {
+  background-color: #f4d03f;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+ion-chip {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+ion-tab-bar {
+  background-color: black;
+}

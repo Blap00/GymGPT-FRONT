@@ -1,3 +1,35 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu *ngIf="isLoggedFunc()" contentId="main" menuId="first" side="start">
+    <ion-header>
+      <ion-buttons slot="start">
+        <ion-button>
+          <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 35px; height: 35px; border-radius: 50%;">
+          <ion-icon *ngIf="!statusImage" name="person-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+        <ion-menu-toggle *ngFor="let c of componentes">
+          <ion-item [routerLink]="c.redirecTo" detail=true>
+             <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
+             {{ c.name }}
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngFor="let d of componentes1">
+          <ion-item (click)="alertapro()" detail=true>
+            <ion-button  expand="full" size="default" fill="outline" shape="round">
+              <ion-icon  slot="start" [name]="d.icon" color="primary"></ion-icon>
+              {{ d.name }}
+            </ion-button>
+         </ion-item>
+        </ion-menu-toggle>
+        </ion-list>
+
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+
 </ion-app>

@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceUsuarioService {
-  private apiUrl = 'https://fabianpalma000.pythonanywhere.com/api/v-1/'; // Cambia esta URL según tu backend
+  private baseUrl = 'https://fabianpalma000.pythonanywhere.com/api/'; // Cambia esta URL según tu backend
+  // private baseUrl = 'http://localhost:8000/api/'
+  private apiUrl = this.baseUrl+'v-1/'; // Cambia esta URL según tu backend
 
   constructor(private http: HttpClient) { }
 
@@ -18,4 +20,37 @@ export class ServiceUsuarioService {
   loginUser(body: any): Observable<any> {
     return this.http.post(`${this.apiUrl}login/`, body);
   }
+  getUser(id: number): Observable<any>{
+    return this.http.get(`${this.apiUrl}getuser/${id}`);
+  }
+  getToken(body: any):Observable<any>{
+    return this.http.post(`${this.baseUrl}token/`, body);
+  }
+  postFeedback(body:any):Observable<any>{
+    const token = localStorage.getItem('token');  // Asegúrate de que el token se almacene correctamente
+    if (!token) {
+      console.error('Token no encontrado');
+    }
+    return this.http.post(`${this.apiUrl}feedback/create/`, body,{
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  }
+
+    // Actualizar perfil de usuario
+  updateUser(userData: any): Observable<any> {
+    const token = localStorage.getItem('token');  // Asegúrate de que el token se almacene correctamente
+    if (!token) {
+      console.error('Token no encontrado');
+    }
+    return this.http.put(`${this.apiUrl}edit-profile/`, userData, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  }
+
 }

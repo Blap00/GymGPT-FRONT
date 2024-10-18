@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="background-color: black;">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
+        <ion-icon *ngIf="!statusImage" style="color:white" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="user">Editar usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="edit-user-content">
+  <div class="user-image-container">
+    <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" class="user-image" />
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="editForm" (ngSubmit)="updateUser()">
+      <div class="input-group">
+        <ion-input
+          formControlName="nombreCompleto"
+          label="Nombre completo"
+          class="input-field"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese su nombre completo"
+        ></ion-input>
+
+        <ion-input
+          formControlName="password"
+          type="password"
+          label="Contraseña"
+          class="input-field"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese nueva contraseña"
+        ></ion-input>
+
+        <ion-input
+          formControlName="edad"
+          type="number"
+          label="Edad"
+          class="input-field"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese su edad"
+        ></ion-input>
+
+        <ion-input
+          formControlName="altura"
+          type="number"
+          label="Altura"
+          class="input-field"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese su altura en cm"
+        ></ion-input>
+
+        <ion-input
+          formControlName="peso"
+          type="number"
+          label="Peso"
+          class="input-field"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese su peso en kg"
+        ></ion-input>
+      </div>
+
+      <div class="session-container">
+        <button class="update-button" type="submit">Actualizar Perfil</button>
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button *ngFor="let c of componente" [routerLink]="c.redirecTo">
+          <ion-icon [name]="c.icon"></ion-icon>
+          <ion-label>{{ c.name }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

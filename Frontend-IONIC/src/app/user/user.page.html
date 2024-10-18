@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="background-color: transparent;">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
+        <ion-icon *ngIf="!statusImage" style="color:white" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="abrirPerfil()">
+        <ion-icon style="color:white" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="workout-content">
+  <div class="imageUserPag">
+    <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" class="background-image">
+  </div>
+  <div class="overlay-content">
+    <h1 class="workout-title">Full Workout</h1>
+    <h2 class="workout-subtitle">PIERNAS</h2>
+
+    <div class="workout-details">
+      <ion-chip color="dark">2h</ion-chip>
+      <ion-chip color="dark">Sentadillas</ion-chip>
+      <ion-chip color="dark">Ryan</ion-chip>
+    </div>
+
+    <div class="progress-bar">
+      <p>Dynamic Warmup | 22 min</p>
+      <ion-progress-bar value="0.4"></ion-progress-bar>
+    </div>
+
+    <ion-button expand="block" color="light" class="keep-watching-button">
+      keep watching
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button *ngFor="let c of componente" [routerLink]="c.redirecTo">
+          <ion-icon [name]="c.icon"></ion-icon>
+          <ion-label>{{ c.name }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
