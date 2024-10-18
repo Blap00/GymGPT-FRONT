@@ -117,4 +117,3 @@ Una vez completados los pasos anteriores, deber√≠as poder acceder a la aplicaci√
 
 - [@Blap00](https://github.com/Blap00) - Desarrollador del sistema
 - [@MoonLight-coder](https://github.com/MoonLight-coder) - Colaborador del Sistema
-- [@AstrovC](https://github.com/AstrovC) - Colaborador del Sistema
