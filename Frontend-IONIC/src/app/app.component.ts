@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController} from '@ionic/angular';
+import { MenuController,} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ServiceUsuarioService } from './services/service-usuario.service';
 
@@ -18,23 +18,36 @@ interface Componente{
 
 export class AppComponent {
   user: any;
+  isLogged:boolean =false;
   constructor(private userService: ServiceUsuarioService,
     private menuController: MenuController ,
     private alertController: AlertController,
     private routerLink: Router,
+    private navController: NavController,
   ) {}
   media_url = ''
   statusImage:boolean = false
-  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
+  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
+  isLoggedFunc(){
+    const userId = localStorage.getItem('userId');
+    if(userId){
+      this.isLogged=true
+      return true;
+    }else{
+      this.isLogged=false
+      return false;
+    }
+  }
   ngOnInit() {
+
     const userId = localStorage.getItem('userId'); // Recupera la ID del usuario
     if (userId) {
+      this.isLogged=true;
       this.userService.getUser(parseInt(userId)).subscribe(
         data => {
           this.user = data;
           this.media_url = this.user.user.image
           // IT GETS UNDEFINED
-          console.log(this.media_url)
           if(this.user.user.image!=''){
             this.user.user.image = `${this.baseUrl}${this.media_url}`;
             this.statusImage=true
@@ -74,17 +87,25 @@ export class AppComponent {
           handler: () => {
             this.handlerMessage = 'Confirmo el cerrar la sesión, necesitara Abrir la cuenta nuevamente';
             this.cerrarSesion();
-            this.routerLink.navigate(['/inicio'])
           },
         },
       ]
     });
     await alert.present();
   }
-  cerrarSesion(){
-    console.log(localStorage.clear());
-    localStorage.setItem('sesnop','true');
-    this.menuController.enable(false, 'first')
+  cerrarSesion() {
+    this.isLogged = false;
+
+    // Deshabilitar el menú
+    this.menuController.enable(false, 'first');
+
+    // Redirigir primero, luego limpiar el localStorage
+    this.routerLink.navigateByUrl('/home').then(() => {
+      // Limpiar sesión y almacenamiento local después de redirigir
+      localStorage.clear();
+    }).catch(err => {
+      console.error("Error al redirigir:", err);
+    });
   }
   componentes: Componente[]=[
     {

@@ -13,7 +13,7 @@ export class EditUserPage implements OnInit {
   user: any;
   editForm: FormGroup;
   errorMessage = '';
-  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
+  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
 
   constructor(
     private userService: ServiceUsuarioService,
@@ -41,7 +41,7 @@ export class EditUserPage implements OnInit {
         data => {
           this.user = data;
           this.media_url = this.user.user.image
-          if(this.user.user.image!=''){
+          if(this.user.user.image!='' && this.media_url!=undefined){
             this.user.user.image = `${this.baseUrl}${this.media_url}`;
             this.statusImage=true
           }else{

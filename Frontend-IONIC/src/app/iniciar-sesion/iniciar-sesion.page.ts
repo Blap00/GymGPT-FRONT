@@ -59,11 +59,9 @@ export class IniciarSesionPage {
             password: body.password
         };
 
-        console.log(tokenRequestBody);
         this.authService.getToken(tokenRequestBody).subscribe(
           (tokenResponse: any) => {
             const token = tokenResponse.access; // Ajusta según tu respuesta
-            console.log(token)
             localStorage.setItem('token', token);
             this.goToInicio();
           },
