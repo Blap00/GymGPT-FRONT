@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <div class="profile-container">
         <ion-avatar>
-          <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
+          <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" (click)="mostrarMenu()" style="width: 40px; height: 40px; border-radius: 50%;">
           <ion-icon *ngIf="!statusImage" name="person-circle-outline"></ion-icon>
         </ion-avatar>
         <div class="mensajeBienvenida">

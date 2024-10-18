@@ -18,7 +18,7 @@ export class InicioPage implements OnInit {
   componente = this.appComponent.componentes;
   media_url = ''
   statusImage:boolean = false
-  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
+  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com'; // Ajusta esto según tu entorno
   ngOnInit() {
     const userId = localStorage.getItem('userId'); // Recupera la ID del usuario
     if (userId) {
@@ -46,5 +46,8 @@ export class InicioPage implements OnInit {
       console.error('No hay un usuario conectado');
     }
   }
-
+  mostrarMenu() {
+    this.menuController.open('first');
+    this.menuController.enable(true, 'first');
+  }
 }
