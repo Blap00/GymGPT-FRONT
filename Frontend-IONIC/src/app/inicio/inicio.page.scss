@@ -1,0 +1,76 @@
+ion-content {
+  --background: #1e1e1e!important;
+  color: white;
+}
+.ImagenUsuario {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.mensajeBienvenida{
+  font-size: 16px;
+  font-family: Viga;
+  margin-right: auto;
+  padding-left: 10px;
+}
+.mensajeBienvenida2{
+  font-size: 16px;
+  font-family: Viga;
+  margin-right: auto;
+  padding-left: 10px;
+  color: #959595;
+}
+.rutina-dia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a; /* Fondo oscuro */
+  border-radius: 25px;
+  padding: 10px 15px;
+  width: fit-content; /* Ajusta el ancho al contenido */
+  border: 2px solid #E6FE58; /* Borde con el color amarillo verdoso */
+}
+
+.dia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dia-label {
+  background-color: #E6FE58; /* Fondo verde lima */
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.titulo-rutina {
+  color: #ffffff; /* Texto blanco */
+  font-size: 1rem;
+}
+
+.edit-icon {
+  color: #E6FE58; /* Mismo color que el borde y botón */
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.guia-entrenamiento {
+  display: flex;
+  align-items: center;
+  margin-top: 15px; /* Ajusta según sea necesario */
+  color: #959595; /* Color gris claro del texto */
+  font-size: 0.9rem;
+}
+
+.guia-entrenamiento span {
+  margin-right: 10px; /* Espacio entre el texto y la línea */
+}
+
+.linea-gris {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #959595; /* Color de la línea gris */
+}
