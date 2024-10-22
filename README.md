@@ -95,6 +95,11 @@ Sigue estos pasos para configurar el proyecto en tu entorno local:
         os.environ['DEBUG'] = 'TRUE/FALSE'
         ```
         --Recuerda que estas variables, NO LA DEBES ACTUALIZAR
+   7. Instala capacitor.
+        ```bash
+        npm install @capacitor/camera
+        ionic cap add @capacitor/camera
+         ```
 ### Estructura del Proyecto
 
 El proyecto está dividido en dos partes principales:
@@ -117,3 +122,4 @@ Una vez completados los pasos anteriores, deberías poder acceder a la aplicaci�
 
 - [@Blap00](https://github.com/Blap00) - Desarrollador del sistema
 - [@MoonLight-coder](https://github.com/MoonLight-coder) - Colaborador del Sistema
+
