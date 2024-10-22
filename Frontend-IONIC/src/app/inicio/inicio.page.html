@@ -1,23 +1,74 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="mostrarMenu()">
-        <img *ngIf="statusImage" [src]="user.user.image" alt="ImagenUsuario" style="width: 40px; height: 40px; border-radius: 50%;">
-        <!-- <img *ngIf="user.user.image" [src]="user.user.image" alt="Usuario" style="width: 40px; height: 40px; border-radius: 50%;">
-         It doenst work properly, Why?-->
-        <ion-icon *ngIf="!statusImage" name="person-circle-outline"></ion-icon>
-      </ion-button>
+      <div class="profile-container">
+        <ion-avatar>
+          <img class="fotoperfil" src="../../assets/ryan.jpg" alt="Profile Picture">
+        </ion-avatar>
+        <div class="mensajeBienvenida">
+          ¡Bienvenido Ryan!
+        </div>
+        <div class="mensajeBienvenida2">
+          ¿Cual es la rutina del día de hoy?
+        </div>
+      </div>
     </ion-buttons>
-    <ion-title color="dark" *ngIf="user">{{user.user.first_name}} {{user.user.last_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content class="ion-padding" color="dark">
-  <!-- Aquí va el contenido principal de la página -->
-  <div>
-    <h2>Contenido de la página</h2>
-    <p>Añade tu contenido aquí...</p>
-    <br><br><br><br> <!-- Esto es solo un ejemplo para llenar espacio -->
+<ion-content>
+  <br>
+  <div class="rutina-dia">
+    <div class="dia">
+      <div class="dia-label">LUN</div> <!-- El día en el botón -->
+      <div class="titulo-rutina">Día de Pecho</div>
+    </div>
+    <ion-icon name="pencil-outline" class="edit-icon"></ion-icon> <!-- Icono de edición -->
+  </div>
+  <div class="guia-entrenamiento">
+    <span>Guía de Entrenamiento</span>
+    <hr class="linea-gris" />
+  </div>
+  
+  <div class="entrenamiento-container">
+    
+    <div class="entrenamiento-card">
+      <img src="../../assets/ejercicio.jpg" alt="Imagen de Press de Banca" class="entrenamiento-imagen">
+  
+      <div class="texto-superpuesto">
+        <h2 class="titulo-ejercicio">Press de Banca</h2>
+        <div class="dias">
+          <div class="dia-boton">Lun-Mie-Vie</div>
+        </div>
+        <div class="detalles-ejercicio">
+          4 Series de 8 Reps, 24 Minutos
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lista-ejercicios">
+    <div class="ejercicio">
+      <div class="numero-circulo">2</div>
+      <div class="info-ejercicio">
+        <h3>Press Banca Inclinado</h3>
+        <p>Trabaja principalmente la parte superior del pecho, hombros y tríceps.</p>
+      </div>
+    </div>
+  
+    <div class="ejercicio">
+      <div class="numero-circulo">3</div>
+      <div class="info-ejercicio">
+        <h3>Press Banca Inclinado</h3>
+        <p>Este ejercicio se enfoca principalmente en los tríceps. Utiliza mancuernas.</p>
+      </div>
+    </div>
+  
+    <div class="ejercicio">
+      <div class="numero-circulo">4</div>
+      <div class="info-ejercicio">
+        <h3>Otro ejercicio</h3>
+        <p>Descripcion del ejercicio.</p>
+      </div>
+    </div>
   </div>
 </ion-content>
 

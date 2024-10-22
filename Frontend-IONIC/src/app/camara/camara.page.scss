@@ -1,0 +1,103 @@
+
+.fotoperfil{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  ion-avatar img {
+    object-fit: cover;
+  }
+  .mensajeBienvenida {
+    margin-left: 10px;
+    font-size: 14px;
+    color: aliceblue;
+    font-family: "Bai Jamjuree";
+  }
+  .mensajeBienvenida2 {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #959595;
+    font-family: "Bai Jamjuree";
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .camera-button {
+    width: 40%;
+    height: 40px;
+    border-radius: 20px; /* Hace los botones ovalados */
+    background-color: rgba(128, 128, 128, 0.3); /* Gris translúcido */
+    font-family: "Bai Jamjuree";
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+  }
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajusta según tus necesidades */
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para asegurar que la imagen cubra todo el área */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Centra el botón verticalmente si es necesario */
+    margin-top: 20px; /* Ajusta este valor según la separación que quieras */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Centra el botón verticalmente si es necesario */
+    margin-top: 20px; /* Ajusta este valor según la separación que quieras */
+  }
+  
+  .custom-camera-button {
+    --background: #E6FE58;  /* Color de fondo personalizado */
+    --color: #000000;       /* Color del texto o ícono dentro del botón */
+    width: 80%;             /* Botón alargado, ajusta el porcentaje según el diseño */
+    height: 50px;           /* Altura del botón */
+    font-size: 18px;        /* Tamaño del texto */
+    text-align: center;     /* Centrar el texto */
+    border-radius: 25px;    /* Bordes redondeados para hacer que el botón sea más ovalado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para darle más énfasis */
+  }
+  
+  .custom-camera-button:hover {
+    --background: #d4f54c; /* Cambia el color al pasar el mouse */
+  }
+  
+  .custom-camera-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Efecto al estar enfocado */
+  }
+  .frame-container {
+    width: 300px; /* Ancho del marco */
+    height: 300px; /* Alto del marco */
+    border: 3px solid red; /* Color del borde rojo del marco */
+    position: relative;
+    overflow: hidden; /* Asegúrate de que la imagen no se salga del marco */
+  }
+  
+  .frame-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen dentro del marco sin distorsionarla */
+  }
+  

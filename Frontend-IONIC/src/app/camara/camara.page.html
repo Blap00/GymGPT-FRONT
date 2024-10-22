@@ -1,13 +1,44 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>camara</ion-title>
+    <ion-buttons slot="start">
+      <div class="profile-container">
+        <ion-avatar>
+          <img class="fotoperfil" src="../../assets/ryan.jpg" alt="Profile Picture">
+        </ion-avatar>
+        <div class="mensajeBienvenida">
+          ¡Bienvenido Ryan!
+        </div>
+        <div class="mensajeBienvenida2">
+          ¿Cual es la rutina del día de hoy?
+        </div>
+      </div>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">camara</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <img *ngIf="image" [src]="image" alt="Foto capturada" />
+  </div>
+
+<div class="button-container">
+  <ion-button (click)="openCamera()" class="custom-camera-button">
+    Conocer sobre esta máquina
+  </ion-button>
+</div>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button *ngFor="let c of componente" [routerLink]="c.redirecTo">
+          <ion-icon [name]="c.icon"></ion-icon>
+          <ion-label>{{ c.name }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
