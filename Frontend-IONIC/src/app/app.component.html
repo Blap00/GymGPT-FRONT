@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu contentId="main" menuId="first" side="start">
+  <ion-menu *ngIf="isLoggedFunc()" contentId="main" menuId="first" side="start">
     <ion-header>
       <ion-buttons slot="start">
         <ion-button>

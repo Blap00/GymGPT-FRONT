@@ -18,7 +18,7 @@ export class InicioPage implements OnInit {
   componente = this.appComponent.componentes;
   media_url = ''
   statusImage:boolean = false
-  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
+  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com'; // Ajusta esto según tu entorno
   ngOnInit() {
     const userId = localStorage.getItem('userId'); // Recupera la ID del usuario
     if (userId) {
@@ -26,13 +26,15 @@ export class InicioPage implements OnInit {
         data => {
           this.user = data;
           this.media_url = this.user.user.image
-          if(this.user.user.image!=''){
+          console.log(this.user.user.image);
+          if(this.user.user.image!='' && this.media_url!=undefined){
             this.user.user.image = `${this.baseUrl}${this.media_url}`;
             this.statusImage=true
+            console.log("La imagen se encontro!")
           }else{
             console.log("La imagen no se encontro!")
             this.statusImage=false
-            this.user.user.image = `${this.baseUrl}${this.media_url}`
+            this.user.user.image = ``
           }
           console.log('Datos del usuario:', this.user);
         },
@@ -48,5 +50,4 @@ export class InicioPage implements OnInit {
     this.menuController.open('first');
     this.menuController.enable(true, 'first');
   }
-
 }

@@ -24,7 +24,7 @@ export class UserPage implements OnInit {
   componente = this.appComponent.componentes;
   media_url = ''
   statusImage:boolean = false
-  baseUrl: string = 'http://localhost:8000'; // Ajusta esto según tu entorno
+  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
 
   ngOnInit() {
     const userId = localStorage.getItem('userId');
@@ -33,7 +33,7 @@ export class UserPage implements OnInit {
         data => {
           this.user = data;
           this.media_url = this.user.user.image
-          if(this.user.user.image!=''){
+          if(this.user.user.image!='' && this.media_url!=undefined){
             this.user.user.image = `${this.baseUrl}${this.media_url}`;
             this.statusImage=true
           }else{
