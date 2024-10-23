@@ -3,7 +3,7 @@ import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuController, NavController } from '@ionic/angular';
 import { AppComponent } from '../app.component';
-
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.page.html',
@@ -13,7 +13,8 @@ export class EditUserPage implements OnInit {
   user: any;
   editForm: FormGroup;
   errorMessage = '';
-  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
+
+  baseUrl: string = environment.baseUrl;
 
   constructor(
     private userService: ServiceUsuarioService,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { MenuController, NavController } from '@ionic/angular';
 import { AppComponent } from '../app.component';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -18,7 +19,8 @@ export class InicioPage implements OnInit {
   componente = this.appComponent.componentes;
   media_url = ''
   statusImage:boolean = false
-  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com'; // Ajusta esto según tu entorno
+
+  baseUrl: string = environment.baseUrl;
   ngOnInit() {
     const userId = localStorage.getItem('userId'); // Recupera la ID del usuario
     if (userId) {

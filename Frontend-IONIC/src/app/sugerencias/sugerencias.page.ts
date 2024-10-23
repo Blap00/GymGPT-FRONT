@@ -4,6 +4,7 @@ import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { MenuController, NavController } from '@ionic/angular';
 import { AppComponent } from '../app.component';
 import { ToastController } from '@ionic/angular'; // Para mostrar notificaciones
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-sugerencias',
@@ -15,7 +16,9 @@ export class SugerenciasPage implements OnInit {
   sugerenciaForm: FormGroup; // Formulario reactivo para sugerencias
   media_url: string = '';
   statusImage: boolean = false;
-  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
+  baseUrl: string = environment.baseUrl;
+
+
   componente = this.appComponent.componentes;
 
   constructor(

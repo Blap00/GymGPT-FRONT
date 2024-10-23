@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceUsuarioService {
-  private baseUrl = 'https://fabianpalma000.pythonanywhere.com/api/'; // Cambia esta URL según tu backend
-  // private baseUrl = 'http://localhost:8000/api/'
+
+  baseUrl: string = environment.baseUrl;
   private apiUrl = this.baseUrl+'v-1/'; // Cambia esta URL según tu backend
 
   constructor(private http: HttpClient) { }
