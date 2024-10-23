@@ -100,4 +100,15 @@
     height: 100%;
     object-fit: cover; /* Ajusta la imagen dentro del marco sin distorsionarla */
   }
+  .custom-camera-button {
+    --background: #E6FE58; /* Color personalizado */
+    --color: #000;
+    border-radius: 20px; /* Botón redondeado */
+    width: 60%;
+    height: 50px;
+    margin: 0 auto; /* Centrar el botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
