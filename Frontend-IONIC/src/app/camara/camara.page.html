@@ -18,6 +18,13 @@
 
 
 <ion-content>
+
+  <ion-button (click)="openCamera()" expand="full">
+    Activar cámara
+  </ion-button>
+  
+  <video #videoElement width="100%" height="auto" autoplay></video>
+
 </ion-content>
 
 <ion-footer>

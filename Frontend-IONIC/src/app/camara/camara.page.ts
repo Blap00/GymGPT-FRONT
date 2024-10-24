@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';import { Camera, CameraResultType } from '@capacitor/camera';
 import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { MenuController, NavController } from '@ionic/angular';
 import { AppComponent } from '../app.component';
@@ -10,8 +9,9 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./camara.page.scss'],
 })
 export class CamaraPage implements OnInit {
+  @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
+  image: string | null = null;
   user: any;
-  image: any;
   
 
 
@@ -54,12 +54,16 @@ export class CamaraPage implements OnInit {
     this.menuController.enable(true, 'first');
   }
   async openCamera() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      resultType: CameraResultType.Base64,
-    });
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      this.videoElement.nativeElement.srcObject = stream;
 
-    this.image = 'data:image/jpeg;base64,' + image.base64String;
+      // Detener el stream cuando se cierre el video (opcional)
+      this.videoElement.nativeElement.onended = () => {
+        stream.getTracks().forEach(track => track.stop());
+      };
+    } catch (error) {
+      console.error('Error al acceder a la cámara:', error);
+    }
   }
 }
