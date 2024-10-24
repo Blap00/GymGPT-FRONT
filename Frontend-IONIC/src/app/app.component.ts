@@ -120,11 +120,6 @@ export class AppComponent {
       redirecTo: '/camara'
     },
     {
-      icon:'search-outline',
-      name: 'Buscar',
-      redirecTo: '/buscar'
-    },
-    {
       icon: 'star-outline',
       name: 'Sugerencias',
       redirecTo: '/sugerencias'

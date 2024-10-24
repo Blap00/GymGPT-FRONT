@@ -22,23 +22,19 @@
 
     <form [formGroup]="sugerenciaForm" (ngSubmit)="enviarSugerencia()">
       <ion-item class="input-field">
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input formControlName="first_name" placeholder="Nombre"></ion-input>
+        <ion-input formControlName="first_name" label="Nombre" labelPlacement="floating" placeholder="Ingresa tu nombre."></ion-input>
       </ion-item>
 
       <ion-item class="input-field">
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input formControlName="last_name" placeholder="Apellido"></ion-input>
+        <ion-input formControlName="last_name" label="Apellido" labelPlacement="floating" placeholder="Ingresa tu apellido."></ion-input>
       </ion-item>
 
       <ion-item class="input-field">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+        <ion-input formControlName="email" label="Email" labelPlacement="floating" placeholder="Ingresa tu mail."></ion-input>
       </ion-item>
 
       <ion-item class="input-field">
-        <ion-label position="floating">Sugerencia</ion-label>
-        <ion-textarea formControlName="feedback" placeholder="Escribe tu sugerencia"></ion-textarea>
+        <ion-input formControlName="feedback" label="Descripcion" labelPlacement="floating" placeholder="Escribe tu sugerencia y/o reclamo."></ion-input>
       </ion-item>
 
       <div class="btn-container">

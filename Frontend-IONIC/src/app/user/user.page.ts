@@ -3,6 +3,7 @@ import { ServiceUsuarioService } from '../services/service-usuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuController, NavController } from '@ionic/angular';
 import { AppComponent } from '../app.component';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-user',
@@ -11,6 +12,8 @@ import { AppComponent } from '../app.component';
 })
 export class UserPage implements OnInit {
   user: any;
+
+  baseUrl: string = environment.baseUrl;
 
   constructor(
     private userService: ServiceUsuarioService,
@@ -24,7 +27,7 @@ export class UserPage implements OnInit {
   componente = this.appComponent.componentes;
   media_url = ''
   statusImage:boolean = false
-  baseUrl: string = 'https://fabianpalma000.pythonanywhere.com/'; // Ajusta esto según tu entorno
+
 
   ngOnInit() {
     const userId = localStorage.getItem('userId');

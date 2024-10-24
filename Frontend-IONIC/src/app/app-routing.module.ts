@@ -54,8 +54,6 @@ const routes: Routes = [
     loadChildren: () => import('./buscar/buscar.module').then( m => m.BuscarPageModule),
     canActivate: [authGuardGuard]  // Protegemos esta ruta con el guard
   },
-
-
 ];
 
 @NgModule({
