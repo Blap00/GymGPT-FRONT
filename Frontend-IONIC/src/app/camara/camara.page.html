@@ -18,14 +18,23 @@
 
 
 <ion-content>
-
   <ion-button (click)="openCamera()" expand="full">
     Activar cámara
   </ion-button>
   
   <video #videoElement width="100%" playsinline height="auto" autoplay></video>
 
+  <!-- Elemento para mostrar las detecciones -->
+  <div *ngIf="detectedObjects.length > 0">
+    <h3>Objetos detectados:</h3>
+    <ul>
+      <li *ngFor="let object of detectedObjects">
+        {{ object }}
+      </li>
+    </ul>
+  </div>
 </ion-content>
+
 
 <ion-footer>
   <ion-toolbar>

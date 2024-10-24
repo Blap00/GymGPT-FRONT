@@ -15,6 +15,9 @@ export class CamaraPage implements OnInit {
   image: string | null = null;
   user: any;
   model!: cocoSsd.ObjectDetection;
+  
+  // Variable para almacenar objetos detectados
+  detectedObjects: string[] = []; 
 
   constructor(
     private userService: ServiceUsuarioService,
@@ -91,9 +94,9 @@ export class CamaraPage implements OnInit {
   }
 
   renderPredictions(predictions: cocoSsd.DetectedObject[]) {
-    predictions.forEach((prediction) => {
-      console.log(`Objeto detectado: ${prediction.class}, Probabilidad: ${prediction.score}`);
-    });
+    // Limpiar el array de objetos detectados antes de llenarlo
+    this.detectedObjects = predictions.map(prediction => prediction.class);
+    console.log('Objetos detectados:', this.detectedObjects);
   }
 
   mostrarMenu() {
